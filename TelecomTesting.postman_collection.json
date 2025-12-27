@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "0a278a0b-d50f-4591-823d-8010f12892e3",
+		"name": "TelecomTesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22957733"
+	},
+	"item": [
+		{
+			"name": "Add user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Test for the status code\r",
+							"pm.test(\"Status code is 201\",()=>{\r",
+							"    pm.expect(pm.response.code).to.eql(201);\r",
+							"})\r",
+							"//Token will generate\r",
+							"let new_token = pm.response.json().token;//extract the token from the response\r",
+							"\r",
+							"pm.environment.set(\"token\",new_token);//set the token in environment variables\r",
+							"\r",
+							"console.log(pm.environment.get(\"token\"));//access token"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Shweta\",\r\n    \"lastName\": \"M\",\r\n    \"email\": \"shweta@yaho112.com\",\r\n    \"password\": \"yahoo123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://thinking-tester-contact-list.herokuapp.com/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Shwetu\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})\r",
+							"//Token will generate\r",
+							"let new_token = pm.response.json().token;//extract the token from the response\r",
+							"\r",
+							"pm.environment.set(\"token\",new_token);//set the token in environment variables\r",
+							"\r",
+							"console.log(pm.environment.get(\"token\"));//access token\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"shweta@yaho112.com\",\r\n    \"password\": \"yahoo123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Add contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(201);\r",
+							"})\r",
+							"let contact_id = pm.response.json()._id;//contact_id the token from the response\r",
+							"\r",
+							"pm.environment.set(\"contact_id\",contact_id);//set the contact_id in environment variables\r",
+							"\r",
+							"console.log(pm.environment.get(\"contact_id\"));//access token"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Ishan\",\r\n    \"lastName\": \"M\",\r\n    \"birthdate\": \"1970-01-01\",\r\n    \"email\": \"sham@fake.com\",\r\n    \"phone\": \"8005555555\",\r\n    \"street1\": \"1 Main St.\",\r\n    \"street2\": \"Apartment A\",\r\n    \"city\": \"Anytown\",\r\n    \"stateProvince\": \"KS\",\r\n    \"postalCode\": \"12345\",\r\n    \"country\": \"IND\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/contacts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get contact list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://thinking-tester-contact-list.herokuapp.com/contacts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/{{contact_id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Update contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Swamy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/{{contact_id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Update contact full update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\",()=>{\r",
+							"    pm.expect(pm.response.code).eq(200);\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Suyam\",\r\n    \"lastName\": \"K\",\r\n    \"birthdate\": \"1992-02-02\",\r\n    \"email\": \"Suyam@fake.com\",\r\n    \"phone\": \"8005554242\",\r\n    \"street1\": \"13 School St.\",\r\n    \"street2\": \"Apt. 5\",\r\n    \"city\": \"Washington\",\r\n    \"stateProvince\": \"QC\",\r\n    \"postalCode\": \"A1A1A1\",\r\n    \"country\": \"Canada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/{{contact_id}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "https://thinking-tester-contact-list.herokuapp.com/users/logout"
+			},
+			"response": []
+		}
+	]
+}

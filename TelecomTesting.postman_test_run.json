@@ -1,0 +1,323 @@
+{
+	"id": "ab36e007-9b5a-4678-b1c4-7773d570362f",
+	"name": "TelecomTesting",
+	"timestamp": "2025-12-27T03:04:15.495Z",
+	"collection_id": "22957733-0a278a0b-d50f-4591-823d-8010f12892e3",
+	"folder_id": 0,
+	"environment_id": "22957733-92aae04f-d725-419b-91ad-65043a800f7b",
+	"totalPass": 9,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-12-27T03:04:09.761Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1eae1129-ebec-498f-b955-18b7159e84f1",
+			"name": "Add user",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users",
+			"time": 498,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				498
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "4cf18115-d3fc-43c9-85fd-29f2d66401fd",
+			"name": "Get user profile",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 399,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				399
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "8aa309d8-f385-4b55-90c0-10a4fd8c3b26",
+			"name": "Update user",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/me",
+			"time": 530,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				530
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "6fa3dec9-1a47-4b80-8a78-ae6dc15e1d8f",
+			"name": "Login user",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/login",
+			"time": 564,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				564
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "39e6757e-f3d2-4a3c-9dab-3ec13ff1b618",
+			"name": "Add contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 330,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				330
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "777ad2e1-aeba-4c6d-aef4-efd859393363",
+			"name": "Get contact list",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"time": 316,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				316
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "c959a099-be01-42dc-afc4-36806e0c3b8c",
+			"name": "Get contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/694f4caa677e200015005dda",
+			"time": 404,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				404
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b54aa364-6152-4ffa-8f2f-a3b993266da2",
+			"name": "Update contact",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/694f4caa677e200015005dda",
+			"time": 627,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				627
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "d7d818a4-8f21-4eec-9946-2845adf4b4cb",
+			"name": "Update contact full update",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/contacts/694f4caa677e200015005dda",
+			"time": 531,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				531
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "2d05fb29-f263-4cd5-bbdf-3e5ebcabf434",
+			"name": "Logout user",
+			"url": "https://thinking-tester-contact-list.herokuapp.com/users/logout",
+			"time": 335,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				335
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4534,
+	"collection": {
+		"requests": [
+			{
+				"id": "1eae1129-ebec-498f-b955-18b7159e84f1",
+				"method": "POST"
+			},
+			{
+				"id": "4cf18115-d3fc-43c9-85fd-29f2d66401fd",
+				"method": "GET"
+			},
+			{
+				"id": "8aa309d8-f385-4b55-90c0-10a4fd8c3b26",
+				"method": "PATCH"
+			},
+			{
+				"id": "6fa3dec9-1a47-4b80-8a78-ae6dc15e1d8f",
+				"method": "POST"
+			},
+			{
+				"id": "39e6757e-f3d2-4a3c-9dab-3ec13ff1b618",
+				"method": "POST"
+			},
+			{
+				"id": "777ad2e1-aeba-4c6d-aef4-efd859393363",
+				"method": "GET"
+			},
+			{
+				"id": "c959a099-be01-42dc-afc4-36806e0c3b8c",
+				"method": "GET"
+			},
+			{
+				"id": "b54aa364-6152-4ffa-8f2f-a3b993266da2",
+				"method": "PATCH"
+			},
+			{
+				"id": "d7d818a4-8f21-4eec-9946-2845adf4b4cb",
+				"method": "PUT"
+			},
+			{
+				"id": "2d05fb29-f263-4cd5-bbdf-3e5ebcabf434",
+				"method": "POST"
+			}
+		]
+	}
+}
